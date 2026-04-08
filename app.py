@@ -1,6 +1,6 @@
 from flask import Flask
 import threading
-from tempmail import bot
+from tempmail_bot import bot   # ✅ correct import
 
 app = Flask(__name__)
 
@@ -11,5 +11,6 @@ def home():
 def run_bot():
     bot.run()
 
-# Start bot in background
 threading.Thread(target=run_bot).start()
+
+app.run(host="0.0.0.0", port=8080)
