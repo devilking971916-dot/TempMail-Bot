@@ -2,4 +2,3 @@ pyrofork
 tgcrypto
 requests
 beautifulsoup4
-gunicorn
