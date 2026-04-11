@@ -1,12 +1,15 @@
 # Author (C) @theSmartBisnu
 # Channel : https://t.me/itsSmartDev
 
+import os
 import re
 import time
 import random
 import string
 import hashlib
 import requests
+import threading
+from flask import Flask
 from bs4 import BeautifulSoup
 from pyrogram.enums import ParseMode, ChatType
 from pyrogram import Client, filters
@@ -21,6 +24,16 @@ from config import (
     API_HASH,
     BOT_TOKEN
 )
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running on Render!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
 
 # Initialize the bot client
 bot = Client(
