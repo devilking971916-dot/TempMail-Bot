@@ -322,3 +322,9 @@ async def manual_check_mail(client, message):
     await bot.delete_messages(message.chat.id, [loading_msg.id])
 
 
+   def main():
+    bot.run()
+
+if __name__ == "__main__":
+    threading.Thread(target=run_flask).start()
+    main()
