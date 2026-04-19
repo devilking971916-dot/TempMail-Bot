@@ -57,6 +57,18 @@ HEADERS = {
     "Accept": "application/json"
 }
 
+# ---------------- BOT COMMANDS (☰ MENU FIX) ----------------
+async def set_bot_commands(app):
+    await app.set_bot_commands([
+        BotCommand("start", "Start the bot"),
+        BotCommand("tmail", "Generate temp email"),
+        BotCommand("cmail", "Check inbox"),
+    ])
+
+async def on_startup(app):
+    await set_bot_commands(app)
+    print("☰ Bot Menu Commands Set Successfully")
+    
 def short_id_generator(email):
     unique_string = email + str(time.time())
     return hashlib.md5(unique_string.encode()).hexdigest()[:10]
