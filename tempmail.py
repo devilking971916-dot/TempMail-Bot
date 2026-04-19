@@ -337,15 +337,15 @@ async def manual_check_mail(client, message):
 from pyrogram import idle
 
 def main():
+    threading.Thread(target=run_flask).start()
+
     bot.start()
     bot.loop.run_until_complete(set_bot_commands(bot))
     print("☰ Bot Menu Commands Set Successfully")
 
-    threading.Thread(target=run_flask).start()
-
     idle()
     bot.stop()
 
+
 if __name__ == "__main__":
-    threading.Thread(target=run_flask).start()
     main()
