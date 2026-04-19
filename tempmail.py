@@ -41,7 +41,7 @@ bot = Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
     workers=1000,
-    parse_mode=ParseMode.MARKDOWN
+    parse_mode=ParseMode.MARKDOWN,
     on_startup=on_startup
 )
 
