@@ -13,6 +13,7 @@ from flask import Flask
 from bs4 import BeautifulSoup
 from pyrogram.enums import ParseMode, ChatType
 from pyrogram import Client, filters
+from pyrogram.types import BotCommand
 
 from pyrogram.types import (
     InlineKeyboardMarkup,
